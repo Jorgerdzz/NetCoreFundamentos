@@ -27,7 +27,22 @@ namespace NetCoreFundamentos
             int numeroRojo = int.Parse(txtRojo.Text);
             int numeroAzul = int.Parse(txtAzul.Text);
             int numeroVerde = int.Parse(txtVerde.Text);
-            this.BackColor = Color.FromArgb(numeroRojo, numeroVerde, numeroAzul);
+            if(numeroRojo < 0  || numeroRojo > 255)
+            {
+                MessageBox.Show("El valor de rojo debe estar comprendido entre 0 y 255");
+            }
+            else if (numeroVerde < 0 || numeroVerde > 255)
+            {
+                MessageBox.Show("El valor de verde debe estar comprendido entre 0 y 255");
+            }
+            else if (numeroAzul < 0 || numeroAzul > 255)
+            {
+                MessageBox.Show("El valor de azul debe estar comprendido entre 0 y 255");
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(numeroRojo, numeroVerde, numeroAzul);
+            }
         }
     }
 }
