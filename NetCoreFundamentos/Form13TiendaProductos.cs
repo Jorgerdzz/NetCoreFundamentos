@@ -41,9 +41,12 @@ namespace NetCoreFundamentos
 
         private void btnSeleccion_Click(object sender, EventArgs e)
         {
-            foreach (string producto in this.lstTienda.SelectedItems)
+            for (int i = 0; i <= this.lstTienda.SelectedItems.Count - 1; i++)
             {
+                int index = this.lstTienda.SelectedIndices[i];
+                string producto = this.lstTienda.SelectedItems[i].ToString();
                 this.lstAlmacen.Items.Add(producto);
+                this.lstTienda.Items.RemoveAt(index);
             }
         }
 
@@ -58,10 +61,20 @@ namespace NetCoreFundamentos
 
         private void btnSubir_Click(object sender, EventArgs e)
         {
-            for(int i=0; i<=this.lstAlmacen.SelectedItems.Count-1; i++)
-            {
-                int index = this.lstAlmacen.SelectedIndices[i]
-            }
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index - 1, producto);
+            this.lstAlmacen.SelectedIndex = index - 1;
+        }
+
+        private void btnBajar_Click(object sender, EventArgs e)
+        {
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index + 1, producto);
+            this.lstAlmacen.SelectedIndex = index + 1;
         }
     }
 }

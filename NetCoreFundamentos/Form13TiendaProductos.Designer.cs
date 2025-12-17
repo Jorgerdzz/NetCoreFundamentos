@@ -161,6 +161,7 @@
             btnBajar.TabIndex = 12;
             btnBajar.Text = "Bajar";
             btnBajar.UseVisualStyleBackColor = true;
+            btnBajar.Click += btnBajar_Click;
             // 
             // Form13TiendaProductos
             // 
