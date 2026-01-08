@@ -25,18 +25,19 @@ namespace NetCoreFundamentos
             person.Genero = (TipoGenero)1;
             person.Nacionalidad = Paises.España;
 
-            person.Domicilio.Calle = "Avenida Europa";
-            person.Domicilio.Ciudad = "Madrid";
-            person.Domicilio.CodigoPostal = 28400;
+            Direccion domicilio = new Direccion();
+            domicilio.Calle = "Avenida Europa";
+            domicilio.Ciudad = "Madrid";
+            domicilio.CodigoPostal = 28400;
 
             person[0] = "Vamos 1";
             person[1] = "Vamos 2";
 
 
             this.lstClases.Items.Add(
-                "Nombre: " + person.Nombre + 
-                ", Apellidos: " + person.Apellidos + 
-                ", Edad: " + person.Edad + 
+                "Nombre: " + person.Nombre +
+                ", Apellidos: " + person.Apellidos +
+                ", Edad: " + person.Edad +
                 ", Genero: " + person.Genero
             );
 
@@ -45,9 +46,28 @@ namespace NetCoreFundamentos
             );
 
             this.lstClases.Items.Add(
-                "Direccion: " + person.Domicilio.Calle + ", " +
-                person.Domicilio.Ciudad + ", " +
-                person.Domicilio.CodigoPostal);
+                "Direccion: " + domicilio.Calle + ", " +
+                domicilio.Ciudad + ", " +
+                domicilio.CodigoPostal);
+        }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            //Empleado emp = new Empleado("Nombre", "Apellidos");
+            Empleado emp = new Empleado();
+            emp.Nombre = "Becario";
+            emp.Apellidos = "tonto";
+            this.lstClases.Items.Add("Empleado: " + emp.GetNombreCompleto());
+            this.lstClases.Items.Add("Salario: " + emp.GetSalarioMinimo() + "€");
+            this.lstClases.Items.Add("Vacaciones empleado: " + emp.GetDiasVacaciones());
+
+            Director dire = new Director();
+            dire.Nombre = "Alberto";
+            dire.Apellidos = "Rodriguez";
+            this.lstClases.Items.Add("Director: " + dire.GetNombreCompleto());
+            this.lstClases.Items.Add("Salario: " + dire.GetSalarioMinimo() + "€");
+            this.lstClases.Items.Add("Vacaciones director: " + dire.GetDiasVacaciones());
+
         }
     }
 }
