@@ -42,6 +42,11 @@ namespace NetCoreFundamentos
         {
             string content = await this.helper.ReadFileAsync(this.Path);
             this.txtContenido.Text = content;
+            string [] nombres = content.Split(',');
+            foreach(string name in nombres)
+            {
+                this.lstNombres.Items.Add(name);
+            }
         }
 
         private async void btnWriteFile_Click(object sender, EventArgs e)
