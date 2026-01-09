@@ -76,5 +76,14 @@ namespace NetCoreFundamentos
                 this.txtEdad.Text = mascota.Edad.ToString();
             }
         }
+
+        private void btnExaminar_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.ShowDialog();
+            //RECUPERAMOS LA RUTA DE LA IMAGEN
+            string path = this.openFileDialog1.FileName;
+            //DIBUJAMOS LA IMAGEN EN EL FORM
+            this.pictureBox1.Image = Image.FromFile(path);
+        }
     }
 }

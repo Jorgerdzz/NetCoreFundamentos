@@ -39,6 +39,10 @@
             btnLeerMascotas = new Button();
             btnGuardarMascotas = new Button();
             btnNuevaMascota = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            pictureBox1 = new PictureBox();
+            btnExaminar = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtEdad
@@ -92,7 +96,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(284, 35);
+            label1.Location = new Point(231, 33);
             label1.Name = "label1";
             label1.Size = new Size(57, 15);
             label1.TabIndex = 12;
@@ -101,7 +105,7 @@
             // lstMascotas
             // 
             lstMascotas.FormattingEnabled = true;
-            lstMascotas.Location = new Point(284, 62);
+            lstMascotas.Location = new Point(231, 60);
             lstMascotas.Name = "lstMascotas";
             lstMascotas.Size = new Size(209, 214);
             lstMascotas.TabIndex = 13;
@@ -109,9 +113,9 @@
             // 
             // btnLeerMascotas
             // 
-            btnLeerMascotas.Location = new Point(566, 62);
+            btnLeerMascotas.Location = new Point(468, 60);
             btnLeerMascotas.Name = "btnLeerMascotas";
-            btnLeerMascotas.Size = new Size(118, 54);
+            btnLeerMascotas.Size = new Size(105, 54);
             btnLeerMascotas.TabIndex = 14;
             btnLeerMascotas.Text = "Leer Mascotas";
             btnLeerMascotas.UseVisualStyleBackColor = true;
@@ -119,9 +123,9 @@
             // 
             // btnGuardarMascotas
             // 
-            btnGuardarMascotas.Location = new Point(566, 127);
+            btnGuardarMascotas.Location = new Point(468, 125);
             btnGuardarMascotas.Name = "btnGuardarMascotas";
-            btnGuardarMascotas.Size = new Size(118, 62);
+            btnGuardarMascotas.Size = new Size(105, 62);
             btnGuardarMascotas.TabIndex = 15;
             btnGuardarMascotas.Text = "Guardar mascotas";
             btnGuardarMascotas.UseVisualStyleBackColor = true;
@@ -137,11 +141,36 @@
             btnNuevaMascota.UseVisualStyleBackColor = true;
             btnNuevaMascota.Click += btnNuevaMascota_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(613, 60);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(244, 216);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            // 
+            // btnExaminar
+            // 
+            btnExaminar.Location = new Point(468, 208);
+            btnExaminar.Name = "btnExaminar";
+            btnExaminar.Size = new Size(105, 50);
+            btnExaminar.TabIndex = 18;
+            btnExaminar.Text = "Examinar...";
+            btnExaminar.UseVisualStyleBackColor = true;
+            btnExaminar.Click += btnExaminar_Click;
+            // 
             // Form24ColeccionMascotasXML
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(879, 450);
+            Controls.Add(btnExaminar);
+            Controls.Add(pictureBox1);
             Controls.Add(btnNuevaMascota);
             Controls.Add(btnGuardarMascotas);
             Controls.Add(btnLeerMascotas);
@@ -155,6 +184,7 @@
             Controls.Add(lblNombre);
             Name = "Form24ColeccionMascotasXML";
             Text = "Form24ColeccionMascotasXML";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,5 +202,8 @@
         private Button btnLeerMascotas;
         private Button btnGuardarMascotas;
         private Button btnNuevaMascota;
+        private OpenFileDialog openFileDialog1;
+        private PictureBox pictureBox1;
+        private Button btnExaminar;
     }
 }
